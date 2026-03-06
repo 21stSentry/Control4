@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Control4 Matrix Config</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Audio Matrix Config</h1>
+      <div class="device-form">
+        <label>
+          Host
+          <input id="host" type="text" />
+        </label>
+        <label>
+          Port
+          <input id="port" type="number" min="1" max="65535" />
+        </label>
+        <label>
+          Local Bind IP
+          <input id="bindIp" type="text" placeholder="optional" />
+        </label>
+        <a class="help-link" href="/help.html" target="_blank" rel="noopener noreferrer">Help</a>
+        <button id="themeToggle" type="button">Dark Mode</button>
+        <button id="refreshStatus">Refresh Status</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel status">
+        <h2>Device Status</h2>
+        <pre id="statusOutput">Loading...</pre>
+      </section>
+
+      <section class="panel routing">
+        <h2>Zone Routing</h2>
+        <div id="zonesGrid" class="zones-grid"></div>
+      </section>
+
+      <section class="panel presets">
+        <h2>Presets</h2>
+        <p class="muted">Select a preset to load routing locally, then click Apply to Unit to push changes.</p>
+        <div id="presets"></div>
+        <div class="row wrap top-gap">
+          <button id="applyToUnit" type="button">Apply to Unit</button>
+        </div>
+        <pre id="presetState"></pre>
+        <pre id="routingStatus" class="hidden-log">No apply run yet.</pre>
+        <div class="row wrap top-gap">
+          <input id="presetName" type="text" placeholder="Preset name" />
+          <button id="addPreset" type="button">Save Current as Preset</button>
+        </div>
+        <div class="row wrap top-gap">
+          <select id="presetSelect"></select>
+          <input id="renamePresetName" type="text" placeholder="New name" />
+          <button id="renamePreset" type="button">Rename</button>
+          <button id="deletePreset" type="button">Delete</button>
+        </div>
+        <div class="row wrap top-gap">
+          <label>
+            Default Preset
+            <select id="defaultPresetSelect"></select>
+          </label>
+          <label>
+            <input id="autoApplyDefaultPreset" type="checkbox" />
+            Auto-apply on startup
+          </label>
+        </div>
+      </section>
+
+      <section class="panel console">
+        <h2>Raw Telnet</h2>
+        <div class="row">
+          <input id="telnetCommand" type="text" placeholder="Type command, e.g. help" />
+          <button id="sendTelnet">Send</button>
+        </div>
+        <pre id="telnetOutput"></pre>
+      </section>
+
+      <section class="panel io-test">
+        <h2>Physical I/O Test</h2>
+        <p class="muted">Routes every Source -> Zone pair so you can verify audible output and mark pass/fail.</p>
+        <div class="row wrap">
+          <button id="startIoTest" type="button">Start 16x16 Test</button>
+          <button id="ioPass" type="button">Pass + Next</button>
+          <button id="ioFail" type="button">Fail + Next</button>
+          <button id="ioSkip" type="button">Skip + Next</button>
+          <button id="resetIoTest" type="button">Reset I/O Test</button>
+        </div>
+        <pre id="ioState">Not started.</pre>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <button id="saveConfig">Save Config</button>
+      <span id="saveState"></span>
+    </footer>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

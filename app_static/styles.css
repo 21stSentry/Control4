@@ -1,0 +1,171 @@
+:root {
+  --bg: #eef1f5;
+  --ink: #0e2233;
+  --brand: #005f73;
+  --brand-soft: #e0f0f4;
+  --panel: #ffffff;
+  --line: #ccd5dd;
+  --pre-bg: #f8fbff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body.dark {
+  --bg: #101419;
+  --ink: #e6eef5;
+  --brand: #2a9d8f;
+  --brand-soft: #1b2a35;
+  --panel: #151d25;
+  --line: #2f3e4b;
+  --pre-bg: #0f1720;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: radial-gradient(circle at top left, #d8ecf3, var(--bg));
+  color: var(--ink);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.device-form {
+  display: flex;
+  gap: 0.75rem;
+  align-items: end;
+}
+
+label {
+  display: grid;
+  font-size: 0.78rem;
+  gap: 0.25rem;
+}
+
+input,
+button,
+select {
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.6rem;
+  font: inherit;
+}
+
+.help-link {
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.6rem;
+  background: var(--panel);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+button {
+  background: var(--brand);
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.panel {
+  background: var(--panel);
+  border-radius: 0.75rem;
+  border: 1px solid var(--line);
+  padding: 0.9rem;
+}
+
+.panel h2 {
+  margin-top: 0;
+  font-size: 1rem;
+}
+
+.zones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.5rem;
+}
+
+.zone {
+  background: var(--brand-soft);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.muted {
+  margin: 0 0 0.7rem;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.top-gap {
+  margin-top: 0.7rem;
+}
+
+.hidden-log {
+  display: none;
+}
+
+pre {
+  margin: 0;
+  white-space: pre-wrap;
+  background: var(--pre-bg);
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  padding: 0.65rem;
+  min-height: 80px;
+  max-height: 260px;
+  overflow: auto;
+}
+
+.status pre {
+  min-height: 160px;
+  max-height: 520px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem 1.3rem;
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    display: block;
+  }
+
+  .device-form {
+    margin-top: 0.7rem;
+    flex-wrap: wrap;
+  }
+}

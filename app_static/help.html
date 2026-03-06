@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Control4 Audio Matrix Switch V3 Help</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="dark">
+    <header class="topbar">
+      <h1>C4-16ZAMSV3-B Help</h1>
+      <div class="device-form">
+        <a class="help-link" href="/index.html">Back to App</a>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel">
+        <h2>Model And Scope</h2>
+        <p class="muted">
+          This page summarizes the official Control4 Audio Matrix Switch V3 dealer manual for model
+          <strong>C4-16ZAMSV3-B</strong>, adapted as quick-reference help for this app.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>What The Unit Does</h2>
+        <p class="muted">
+          16 analog stereo inputs route to 16 stereo outputs. Typical use is whole-home distribution, with
+          matrix switching controlled by Control4 automation tools.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>Physical Installation Checklist</h2>
+        <ul>
+          <li>Mount in a ventilated rack location and keep front/rear airflow clear.</li>
+          <li>Connect line-level audio sources to INPUT 1-16 using consistent cabling/labeling.</li>
+          <li>Connect OUTPUT 1-16 to downstream amps or powered zone inputs.</li>
+          <li>Use managed power and proper grounding for the rack.</li>
+          <li>Connect Ethernet to LAN for Control4 discovery/configuration.</li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <h2>Network Behavior</h2>
+        <ul>
+          <li>Default network mode is DHCP in typical Control4 workflows.</li>
+          <li>If direct-connected, use static addressing on your laptop/adapter for discovery.</li>
+          <li>For stability in production, reserve DHCP lease by MAC in the router.</li>
+          <li>This app can bind to a specific local NIC using <code>Local Bind IP</code>.</li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <h2>Control And Configuration</h2>
+        <ul>
+          <li>Official Control4 setup path is Composer Pro/dealer workflow.</li>
+          <li>This app provides practical route/preset management and test workflows.</li>
+          <li>Raw Telnet is available for diagnostics where firmware exposes debug interface.</li>
+          <li>Use the Physical I/O Test in this app to verify all source/zone paths.</li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <h2>Troubleshooting</h2>
+        <ul>
+          <li>No discovery: verify link lights, same subnet, and correct bound interface.</li>
+          <li>No audio: verify source signal presence, output wiring, and downstream amplifier state.</li>
+          <li>Intermittent control: set DHCP reservation and avoid duplicate IP assignments.</li>
+          <li>Unexpected routes: apply known preset (<code>Input1-AllZones</code> or <code>Sequential</code>) and retest.</li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <h2>Official Manual Source</h2>
+        <p class="muted">
+          Control4 Documentation: Audio Matrix Switch V3 Dealer Installation and Setup Guide.
+        </p>
+        <p>
+          <a class="help-link" href="https://docs.control4.com/docs/product/audio-matrix-switch-v3/dealer-installation-and-setup-guide/english/latest" target="_blank" rel="noopener noreferrer">Open official guide</a>
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
